@@ -1,7 +1,8 @@
 function isIsogram(strInput = "") {
-  const inputLover = strInput.toLowerCase();
-  return ![...inputLover].some(
-    (str) => inputLover.indexOf(str) !== inputLover.lastIndexOf(str)
+  const inputLower = strInput.toLowerCase();
+
+  return ![...inputLower].some(
+    (str) => inputLower.indexOf(str) !== inputLower.lastIndexOf(str)
   );
 }
 
