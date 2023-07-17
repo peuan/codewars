@@ -1,8 +1,9 @@
 function isIsogram(str) {
   var noDup = [];
   for (var i = 0; i < [...str].length; i++) {
-    if (!noDup.includes(str[i].toLowerCase())) {
-      noDup.push(str[i].toLowerCase());
+    var lowerString = str[i].toLowerCase()
+    if (!noDup.includes(lowerString)) {
+      noDup.push(lowerString);
     }
   }
   return str.length === noDup.length;
