@@ -23,7 +23,6 @@ function randomSub() {
   return [...a].reduce((previous, current)  => {
     const index = getRandomInt(a.length)
 
-    console.log(a)
     previous[current] = a[index]
     a = a.replace(a[index], '')
     
