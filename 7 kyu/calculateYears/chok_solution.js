@@ -5,13 +5,13 @@ function calculateYears(principal, interest, tax, desired, y = 0) {
 
   const interestAmount = principal * interest;
   const taxAmount = interestAmount * tax;
-  const currentPrincipal = principal + interestAmount - taxAmount;
+  const currentAmount = principal + interestAmount - taxAmount;
 
-  if (currentPrincipal >= desired) {
+  if (currentAmount >= desired) {
     return y + 1;
   }
 
-  return calculateYears(currentPrincipal, interest, tax, desired, y + 1);
+  return calculateYears(currentAmount, interest, tax, desired, y + 1);
 }
 
 console.log(calculateYears(1000, 0.05, 0.18, 1100), 3);
