@@ -1,7 +1,7 @@
 function solve(s = "") {
   const numberToConvert = 96;
   return Math.max(...s
-    .split(/[a,e,i,o,u]/g)
+    .split(/[aeiou]/g)
     .map((char) => {
         return [...char].reduce((current, previous) => {
             current += previous.charCodeAt() - numberToConvert
