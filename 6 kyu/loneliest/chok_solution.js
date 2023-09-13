@@ -8,9 +8,12 @@ function loneliest(str = "") {
     .trim()
     .split("")
     .forEach((currentPerson) => {
-      if (countingPerson !== currentPerson && currentPerson !== " ") {
-        counter[currentPerson] = counter.tempSpace || 0;
+      const isNewPerson = countingPerson !== currentPerson;
+      const isNotEmpty = currentPerson !== " ";
+
+      if (isNewPerson && isNotEmpty) {
         countingPerson = currentPerson;
+        counter[countingPerson] = counter.tempSpace || 0;
         counter.tempSpace = 0;
       } else {
         counter.tempSpace += 1;
