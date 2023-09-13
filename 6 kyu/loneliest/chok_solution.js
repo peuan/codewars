@@ -2,19 +2,19 @@ function loneliest(str = "") {
   const counter = {
     tempSpace: 0,
   };
-  let currentPerson = "";
+  let countingPerson = "";
+
   str
     .trim()
     .split("")
-    .forEach((person) => {
-      if (currentPerson !== person && person !== " ") {
-        counter[person] = counter.tempSpace || 0;
-        currentPerson = person;
+    .forEach((currentPerson) => {
+      if (countingPerson !== currentPerson && currentPerson !== " ") {
+        counter[currentPerson] = counter.tempSpace || 0;
+        countingPerson = currentPerson;
         counter.tempSpace = 0;
-      }
-      if (person === " ") {
+      } else {
         counter.tempSpace += 1;
-        counter[currentPerson] += 1;
+        counter[countingPerson] += 1;
       }
     });
 
