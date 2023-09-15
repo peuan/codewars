@@ -7,11 +7,7 @@ function trim(str = "", size) {
     return `${str.slice(0, size)}...`;
   }
 
-  if (str.length < 4) {
-    return `${str}...`;
-  }
-
-  return `${str.slice(0, Math.max(size - 3, 1))}...`;
+  return `${str.slice(0, size - 3)}...`;
 }
 
 // console.log(trim("Creating kata is fun", 14), "Creating ka...");
