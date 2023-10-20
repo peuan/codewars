@@ -15,31 +15,24 @@ function doMath(string = "") {
       return Number(text.match(/[0-9]/g).join(""));
     });
 
-  // 10 + 45 - 14 * 7 / 78 + 90 - 34 = 6
   return Math.round(
     numbers.reduce((result, currentNumber, index) => {
-      const modeIndex = (index + 1) % 4;
-      if (index === 0) {
-        return currentNumber;
-      }
-
-      if (modeIndex === 2) {
+      const modIndex = (index + 1) % 4;
+      if (modIndex === 2) {
         return result + currentNumber;
       }
 
-      if (modeIndex === 3) {
+      if (modIndex === 3) {
         return result - currentNumber;
       }
 
-      if (modeIndex === 0) {
+      if (modIndex === 0) {
         return result * currentNumber;
       }
 
-      if (modeIndex === 1) {
+      if (modIndex === 1) {
         return result / currentNumber;
       }
-
-      return result;
     })
   );
 }
