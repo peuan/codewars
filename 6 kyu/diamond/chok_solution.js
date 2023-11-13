@@ -34,3 +34,5 @@ console.log(diamond(7));
 //     assert.strictEqual(diamond(-3), null)
 //     assert.strictEqual(diamond(0), null)
 //   });
+
+console.log("   *\n  ***\n *****\n*******\n *****\n  ***\n   *\n")
