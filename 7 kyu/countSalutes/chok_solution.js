@@ -1,17 +1,17 @@
 function countSalutes(hallway = "") {
-  return (
-    [...hallway].reduce((totalMet, currentWay, currentIndex) => {
-      if (currentWay === ">") {
-        const canMeet = [...hallway].filter((way, wayIndex) => {
-          return way === "<" && currentIndex < wayIndex;
-        }).length;
+  const totalMet = [...hallway].reduce((totalMet, currentWay, currentIndex) => {
+    if (currentWay === ">") {
+      const canMeet = [...hallway].filter((way, wayIndex) => {
+        return way === "<" && currentIndex < wayIndex;
+      }).length;
 
-        return totalMet + canMeet;
-      }
+      return totalMet + canMeet;
+    }
 
-      return totalMet;
-    }, 0) * 2
-  );
+    return totalMet;
+  }, 0);
+
+  return totalMet * 2;
 }
 
 console.log(countSalutes("<---->---<---<-->"), 4);
