@@ -10,3 +10,4 @@ function countSalutes(hallway = "") {
   }
   return (count*2);
 }
+ 
