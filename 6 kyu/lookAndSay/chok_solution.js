@@ -7,11 +7,11 @@ function lookAndSay(data, len) {
     let nextSayNumber = "";
 
     for (let j = 0; j < currentSayNumber.length; j++) {
-      const currentNumber = currentSayNumber[j];
-      const nextNumber = currentSayNumber[j + 1];
+      const currentChar = currentSayNumber[j];
+      const nextChar = currentSayNumber[j + 1];
       
-      if (nextNumber !== currentNumber) {
-          nextSayNumber += `${count}${currentNumber}`;
+      if (nextChar !== currentChar) {
+          nextSayNumber += `${count}${currentChar}`;
           count = 1;
         } else {
           count += 1;
@@ -20,6 +20,8 @@ function lookAndSay(data, len) {
 
     results.push(nextSayNumber);
   }
+
+  console.log(results)
 
   results.shift()
   return results;
