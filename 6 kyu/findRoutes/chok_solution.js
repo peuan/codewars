@@ -17,9 +17,9 @@ function findRoutes(routes = [[]]) {
   startName = start;
   nextDestinationName = destination;
 
-  const result = [startName, nextDestinationName];
+  const results = [startName, nextDestinationName];
 
-  routes.forEach(() => {
+  for (let index = 1; index < routes.length; index++) {
     const nextDestinations = routes.find((route) => {
       const [start] = route;
       return start === nextDestinationName;
@@ -28,19 +28,20 @@ function findRoutes(routes = [[]]) {
     if (nextDestinations) {
       const [, destination] = nextDestinations;
       nextDestinationName = destination;
-      result.push(destination);
+      results.push(destination);
     }
-  });
+  }
 
-  return result.join(", ");
+  return results.join(", ");
 }
 
 // Expected: 'MNL, TAG, CEB, TAC, BOR', instead got: 'MNL, TAG, CEB'
 console.log(
   findRoutes([
-    ["MNL", "TAG"],
-    ["CEB", "TAC"],
-    ["TAG", "CEB"],
-    ["TAC", "BOR"],
+    ["BRA", "KSA"],
+    ["USA", "BRA"],
+    ["JPN", "PHL"],
+    ["KSA", "UAE"],
+    ["UAE", "JPN"],
   ])
 );
